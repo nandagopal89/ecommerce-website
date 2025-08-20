@@ -70,7 +70,7 @@ The ER (Entity-Relationship) diagram defines the database schema for managing **
 
 
 
-## 2. Class Diagram: (click to view) - ![Class Image](https://imgur.com/a/Lfi0HbJ)
+## 2. Class Diagram: (click to view) - ![Class Image](images/class_image.png)
 
 The Class Diagram explains the **object-oriented structure** of the system.
 
