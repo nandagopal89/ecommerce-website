@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit: {{ product.name }} <span class="muted">({{ product.category.name }})</span></h2>
+
+<form class="card" method="post">
+  {% for a in attrs %}
+    <div class="field">
+      <label>{{ a.name }} ({{ a.data_type }})</label>
+
+      {% if a.data_type == "number" %}
+        <input type="number" name="attr_{{ a.id }}" value="{{ existing.get(a.id, '') }}">
+      {% elif a.data_type == "boolean" %}
+        <input type="checkbox" name="attr_{{ a.id }}" {% if existing.get(a.id, '').lower() in ['true','1','on'] %}checked{% endif %}>
+      {% elif a.data_type == "date" %}
+        <input type="date" name="attr_{{ a.id }}" value="{{ existing.get(a.id, '') }}">
+      {% else %}
+        <input type="text" name="attr_{{ a.id }}" value="{{ existing.get(a.id, '') }}">
+      {% endif %}
+    </div>
+  {% else %}
+    <p class="muted">This category has no attributes yet. Add some first.</p>
+  {% endfor %}
+
+  <button type="submit">Save Values</button>
+  <a class="btn secondary" href="{{ url_for('products_page') }}">Back</a>
+</form>
+{% endblock %}

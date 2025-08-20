@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Categories</h2>
+
+<form class="card" method="post" action="{{ url_for('create_category') }}">
+  <label>New Category Name</label>
+  <div class="row">
+    <input name="name" placeholder="e.g. Smartphones" required>
+    <button type="submit">Add</button>
+  </div>
+</form>
+
+<table class="table">
+  <thead><tr><th>Name</th><th>Attributes</th><th>Manage</th></tr></thead>
+  <tbody>
+    {% for c in categories %}
+    <tr>
+      <td>{{ c.name }}</td>
+      <td>{{ c.attributes|length }}</td>
+      <td><a class="btn" href="{{ url_for('category_attributes_page', category_id=c.id) }}">Open</a></td>
+    </tr>
+    {% else %}
+    <tr><td colspan="3" class="muted">No categories yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

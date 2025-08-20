@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="grid">
+  <div class="card"><div class="kpi">{{ counts.categories }}</div><div class="muted">Categories</div></div>
+  <div class="card"><div class="kpi">{{ counts.attributes }}</div><div class="muted">Attributes</div></div>
+  <div class="card"><div class="kpi">{{ counts.products }}</div><div class="muted">Products</div></div>
+</div>
+
+<h3>Latest Products</h3>
+<table class="table">
+  <thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Created</th></tr></thead>
+  <tbody>
+    {% for p in latest %}
+    <tr>
+      <td>{{ p.name }}</td>
+      <td>{{ p.category.name }}</td>
+      <td>₹{{ "%.2f"|format(p.price) }}</td>
+      <td>{{ p.created_at.strftime("%Y-%m-%d %H:%M") }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4" class="muted">No products yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

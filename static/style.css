@@ -1,0 +1,46 @@
+:root { --bg:#f6f7fb; --ink:#1f2937; --muted:#6b7280; --card:#fff; --brand:#2c3e50; --accent:#2563eb; }
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);}
+.container{max-width:980px;margin:0 auto;padding:16px}
+.topbar{background:var(--brand);color:#fff}
+.topbar .container{display:flex;align-items:center;gap:16px}
+.brand{font-size:20px;margin:0;flex:1}
+.topbar nav a{color:#fff;text-decoration:none;margin-left:14px;opacity:.9}
+.topbar nav a:hover{opacity:1;text-decoration:underline}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:14px 0}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 1px 6px rgba(0,0,0,.08);margin:12px 0}
+.kpi{font-size:28px;font-weight:700}
+.muted{color:var(--muted)}
+.footer{padding:24px 0;margin-top:40px;color:var(--muted);font-size:14px;text-align:center}
+
+.table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin-top:10px}
+.table th,.table td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+.table thead{background:#fafafa;font-weight:600}
+
+input,select,button{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.field{margin:10px 0}
+.row{display:flex;gap:10px}
+.row input{flex:1}
+.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;text-align:center}
+.btn.secondary{background:#9ca3af}
+button{background:var(--accent);color:#fff;border:none;cursor:pointer}
+button:hover,.btn:hover{filter:brightness(1.05)}
+/* Specific input */
+input[name="name"] {
+  width: 250px;       /* custom width */
+  height: 40px;       /* custom height */
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+/* Specific button next to input */
+button[type="submit"] {
+  width: 100px;       /* custom width */
+  height: 42px;       /* custom height */
+  font-size: 16px;
+}
+
+@media (max-width:600px){ .row{flex-direction:column} }
+

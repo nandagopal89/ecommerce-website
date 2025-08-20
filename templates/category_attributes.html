@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ category.name }} – Attributes</h2>
+
+<form class="card" method="post" action="{{ url_for('add_attribute', category_id=category.id) }}">
+  <div class="row">
+    <input name="name" placeholder="Attribute name (e.g. RAM)" required>
+    <select name="data_type">
+      <option value="text">text</option>
+      <option value="number">number</option>
+      <option value="boolean">boolean</option>
+      <option value="date">date</option>
+    </select>
+    <button type="submit">Add Attribute</button>
+  </div>
+</form>
+
+<table class="table">
+  <thead><tr><th>Name</th><th>Type</th></tr></thead>
+  <tbody>
+    {% for a in attrs %}
+    <tr><td>{{ a.name }}</td><td>{{ a.data_type }}</td></tr>
+    {% else %}
+    <tr><td colspan="2" class="muted">No attributes yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
