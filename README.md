@@ -59,7 +59,8 @@ This document combines the **ER Diagram** and **Class Diagram** for the Product 
 
 The ER (Entity-Relationship) diagram defines the database schema for managing **categories, products, attributes, and their values**.
 
-### ER Diagram: (click to view) - ![alt text](erd_img-1.png)
+### ER Diagram:<br>
+<img src="images/erd_image.png" alt="class image" width="500" height="500"/>
 
 
 ### Explanation:
@@ -70,7 +71,8 @@ The ER (Entity-Relationship) diagram defines the database schema for managing **
 
 
 
-## 2. Class Diagram: (click to view) - ![Class Image](images/class_image.png)
+## 2. Class Diagram:<br>
+<img src="images/class_image.png" alt="class image" width="500" height="500"/>
 
 The Class Diagram explains the **object-oriented structure** of the system.
 
