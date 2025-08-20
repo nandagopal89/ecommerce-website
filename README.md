@@ -39,13 +39,13 @@ Implemented with **Flask, SQLAlchemy, Jinja2, SQLite**.
 
 ### Run locally
 ```bash
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+python -m venv 'PATH/TO/VENV' # create virtual env
+
+source venv/bin/activate # activate virtual env
+
 pip install flask flask_sqlalchemy
-export FLASK_APP=app.py    # Windows: set FLASK_APP=app.py
-flask run                  # or python app.py
-# (optional) seed sample data
-open http://127.0.0.1:5000/seed
+
+python app.py
 ```
 
 
